@@ -1,0 +1,45 @@
+Copying tests/filesys/extended/grow-create to scratch partition...
+Copying tests/filesys/extended/tar to scratch partition...
+qemu-system-x86_64 -device isa-debug-exit -hda /tmp/zay2Quk2JZ.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+c[?7l[2J[0mSeaBIOS (version 1.15.0-1)
+Booting from Hard Disk...
+PPiiLLoo  hhddaa1
+1
+LLooaaddiinngg.......................
+Kernel command line: -q -f extract run grow-create
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  997,785,600 loops/s.
+ide0: unexpected interrupt
+hda: 1,008 sectors (504 kB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 206 sectors (103 kB), Pintos OS kernel (20)
+hda2: 272 sectors (136 kB), Pintos scratch (22)
+hdb: 5,040 sectors (2 MB), model "QM00002", serial "QEMU HARDDISK"
+hdb1: 4,096 sectors (2 MB), Pintos file system (21)
+ide1: unexpected interrupt
+filesys: using hdb1
+scratch: using hda2
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'grow-create' into the file system...
+Putting 'tar' into the file system...
+Erasing ustar archive...
+Executing 'grow-create':
+(grow-create) begin
+(grow-create) create "blargle"
+(grow-create) open "blargle" for verification
+(grow-create) verified contents of "blargle"
+(grow-create) close "blargle"
+(grow-create) end
+grow-create: exit(0)
+Execution of 'grow-create' complete.
+Timer: 65 ticks
+Thread: 3 idle ticks, 61 kernel ticks, 1 user ticks
+hdb1 (filesys): 118 reads, 554 writes
+hda2 (scratch): 271 reads, 2 writes
+Console: 1215 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
